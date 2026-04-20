@@ -1,0 +1,190 @@
+.link-word {
+    color: inherit;     
+    text-decoration: none;
+    cursor: pointer;  
+}
+
+.link-word:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-color: #ffd6e8;
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 10px solid #ff9acb;
+    box-shadow: 0 0 25px #ff9acb, 0 0 50px #ff9acb;
+    font-size: clamp(1.2rem, 3vw, 2.4rem);
+}
+
+h1 {
+    text-align: center;
+    color: #b30059; 
+}
+
+h2 {
+   color: #663399;
+    margin-top: 90px;
+    margin-left: 10px;
+    margin: 20px 0;
+}
+
+.phrase-1 {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1.8s ease forwards;
+}
+
+.phrase-2 {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1.8s ease forwards;
+    animation-delay: 2s; 
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rainbow-wave {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.rainbow-wave span {
+    display: inline-block;
+    font-weight: inherit;
+    animation: wave 1.6s ease-in-out infinite;
+
+    color: #ffb3d9;
+
+    text-shadow:
+        0 0 6px #b30059,
+        0 0 12px #ff5fa2,
+        0 0 18px #ff5fa2;
+
+    position: relative;
+}
+
+.rainbow-wave span::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-image:
+        radial-gradient(circle, rgba(255,255,255,0.9) 0%, transparent 60%),
+        radial-gradient(circle, rgba(255,255,255,0.7) 0%, transparent 60%),
+        radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%);
+
+    background-size: 4px 4px, 3px 3px, 5px 5px;
+    background-position:
+        20% 30%,
+        70% 60%,
+        40% 80%;
+
+    animation: twinkle 1.4s infinite ease-in-out alternate;
+    pointer-events: none;
+    opacity: 0;
+}
+
+@keyframes twinkle {
+    0%   { opacity: 0.1; transform: scale(1); }
+    50%  { opacity: 0.8; transform: scale(1.2); }
+    100% { opacity: 0.2; transform: scale(0.9); }
+}
+
+.rainbow-wave span:nth-child(1) { animation-delay: 0s; }
+.rainbow-wave span:nth-child(2) { animation-delay: 0.1s; }
+.rainbow-wave span:nth-child(3) { animation-delay: 0.2s; }
+.rainbow-wave span:nth-child(4) { animation-delay: 0.3s; }
+.rainbow-wave span:nth-child(5) { animation-delay: 0.4s; }
+.rainbow-wave span:nth-child(6) { animation-delay: 0.5s; }
+
+/* WAVE MOTION */
+@keyframes wave {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-10px); }
+    60%  { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
+
+.look-float {
+    display: inline-block;
+    color: #ffb3d9;
+
+    /* dark pink glow */
+    text-shadow:
+        0 0 6px #b30059,
+        0 0 12px #ff5fa2,
+        0 0 18px #ff5fa2;
+
+    animation: float 3s ease-in-out infinite;
+     animation-delay: 2.2s;
+     animation-fill-mode: forwards;
+}
+
+@keyframes float {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.hurts-shatter span {
+    display: inline-block;
+    color: #ff66cc;
+    animation: shatter 2.3s ease forwards;
+    opacity: 1;
+}
+
+/* Delay each letter slightly */
+.hurts-shatter span:nth-child(1) { animation-delay: 2s; }
+.hurts-shatter span:nth-child(2) { animation-delay: 2.1s; }
+.hurts-shatter span:nth-child(3) { animation-delay: 2.2s; }
+.hurts-shatter span:nth-child(4) { animation-delay: 2.3s; }
+.hurts-shatter span:nth-child(5) { animation-delay: 2.4s; }
+
+@keyframes shatter {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(40px) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+.rubik-mono-one-regular {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.righteous-regular {
+  font-family: "Righteous", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.playwrite-ng-modern {
+  font-family: "Playwrite NG Modern", cursive;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
