@@ -1,0 +1,125 @@
+.link-word {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.link-word:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-color: #ffd6e8;
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 10px solid #ff9acb;
+    box-shadow: 0 0 25px #ff9acb, 0 0 50px #ff9acb;
+    font-size: clamp(1.2rem, 3vw, 2.4rem);
+}
+
+h1 {
+    text-align: center;
+    color: #b30059; 
+}
+
+h2 {
+   color: #663399;
+    text-align: center;
+    margin-top: 90px;
+    margin-left: 20px;
+}
+
+.slide-down-1 {
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: slideDown 1.8s ease forwards;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-down-2 {
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: slideDown 1.8s ease forwards;
+    animation-delay: 2s;
+}
+
+.clock-tick {
+    display: inline-block;
+    animation: tick 1s steps(2) infinite;
+}
+
+@keyframes tick {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(-8deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.worth-pop-move {
+    display: inline-block;
+    background: linear-gradient(90deg, #3a0066, #8f00ff, #3a0066);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    animation: worth-pop-move 1.2s ease forwards;
+    animation-delay: 2s;
+}
+
+@keyframes worth-pop-move {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.6);
+        text-shadow: 0 0 0px #8f00ff;
+    }
+    40% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.35);
+        text-shadow: 0 0 20px #b266ff, 0 0 30px #d9b3ff;
+    }
+    70% {
+        transform: translateY(0px) scale(1.1);
+        text-shadow: 0 0 14px #b266ff;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        text-shadow: 0 0 8px #8f00ff;
+    }
+}
+
+.worth-pop-move:hover {
+    text-decoration: none;
+}
+
+.griffy-regular {
+  font-family: "Griffy", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.gorditas-regular {
+  font-family: "Gorditas", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #663399;
+}
+
+.gorditas-bold {
+  font-family: "Gorditas", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #b30059
+}
