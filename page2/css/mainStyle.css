@@ -1,0 +1,186 @@
+.link-word {
+    color: inherit;        /* keeps the same color as the heading */
+    text-decoration: none; /* removes underline */
+    cursor: pointer;       /* makes it feel clickable */
+}
+
+.link-word:hover {
+    text-decoration: underline; /* optional hover effect */
+}
+
+body {
+    background-color: #ffd6e8; /* light pink */
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 10px solid #ff9acb; /* pink border */
+    box-shadow: 0 0 25px #ff9acb, 0 0 50px #ff9acb; /* glowing effect */
+    font-size: clamp(1.2rem, 3vw, 2.4rem);
+}
+
+h1 {
+    text-align: center;
+    color: #b30059; 
+}
+
+h2 {
+   color: #4b0082;
+   font-family: 'Georgia', serif;
+}
+
+.fade-in-1 {
+    opacity: 0;
+    animation: fadeInSoft 2.5s ease forwards;
+    margin-bottom: 80px; /* space between phrases */
+}
+
+@keyframes fadeInSoft {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in-2 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 2.5s ease forwards;
+    animation-delay: 2.6s; /* waits for phrase 1 to finish */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.firework {
+    position: relative;
+    display: inline-block;
+    animation: pop 1.2s ease-in-out infinite;
+    color: #ff4fa3;
+    text-shadow: 0 0 10px #ff9acb;
+}
+
+.firework::before,
+.firework::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    background: #ffd6e8;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    animation: sparks 1.2s ease-out infinite;
+}
+
+.firework::after {
+    animation-delay: 0.15s;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    20% { transform: scale(1.4); text-shadow: 0 0 20px #ffb3d9; }
+    40% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes sparks {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        box-shadow:
+            0 0 0 #ff9acb,
+            0 0 0 #ffd6e8,
+            0 0 0 #ffffff;
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(3);
+        box-shadow:
+            20px -10px 0 #ff9acb,
+            -15px 12px 0 #ffd6e8,
+            10px 18px 0 #ffffff;
+    }
+}
+
+.blur-reveal {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(10px);
+    animation: blurReveal 2s ease forwards;
+}
+
+@keyframes blurReveal {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+.family-orbit {
+    position: relative;
+    display: inline-block;
+    color: #ffd27f;
+    text-shadow:
+        0 0 6px #ffb347,
+        0 0 12px #ffcc80,
+        0 0 18px #ffcc80;
+}
+
+.family-orbit::after {
+    content: "✨";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: orbit 2.5s linear infinite;
+}
+
+@keyframes orbit {
+    0%   { transform: translate(-50%, -10px) rotate(0deg); }
+    25%  { transform: translate(10px, 0px) rotate(90deg); }
+    50%  { transform: translate(-50%, 10px) rotate(180deg); }
+    75%  { transform: translate(-110%, 0px) rotate(270deg); }
+    100% { transform: translate(-50%, -10px) rotate(360deg); }
+}
+
+.schoolbell-regular {
+  font-family: "Schoolbell", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: #b366ff;
+}
+
+.marck-script-regular {
+  font-family: "Marck Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+    color: #ff4fa3;
+}
+
+.henny-penny-regular {
+  font-family: "Henny Penny", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffb3d9;
+  text-shadow:
+    0 0 6px #ff99dd,
+    0 0 12px #cc66ff,
+    0 0 18px #b300ff;
+
+}
+
