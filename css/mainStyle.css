@@ -1,130 +1,93 @@
+.link-word {
+    color: inherit;       
+    text-decoration: none; 
+    cursor: pointer;      
+}
+
+.link-word:hover {
+    text-decoration: underline; 
+}
+
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-size: 3rem;
-  font-family: sans-serif;
-  cursor: pointer;
-  user-select: none;
+    background-color: #ffd6e8;
+    margin: 0;
+    height: 100vh;
 
-  background: #ffd6e8;
-  box-shadow: inset 0 0 200px rgba(255, 150, 200, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 10px solid #ff9acb;
+    box-shadow: 0 0 25px #ff9acb, 0 0 50px #ff9acb; 
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
 }
 
-/* First phrase font */
-#phrase {
-  font-family: 'Dancing Script', cursive;
-  font-size: 5rem;
+h1 {
+    text-align: center;
+    color: #b30059; 
 }
 
-.wave-rainbow span {
-  display: inline-block;
-  font-family: 'Dancing Script', cursive;
-
-  /* Darker rainbow gradient */
-  background: linear-gradient(
-    90deg,
-    #ff7aa2,
-    #ffb347,
-    #a3ff8f,
-    #7ab8ff,
-    #d28bff
-  );
-  background-size: 300%;
-  -webkit-background-clip: text;
-  color: transparent;
-
-  /* Wave animation */
-  animation: rainbowWave 2.2s ease-in-out infinite;
+.flow span {
+    opacity: 0;
+    animation: fadeIn 0.6s forwards;
+    display: inline-block;
 }
 
-/* Stagger each letter for a flowing wave */
-.wave-rainbow span:nth-child(1) { animation-delay: 0s; }
-.wave-rainbow span:nth-child(2) { animation-delay: 0.15s; }
-.wave-rainbow span:nth-child(3) { animation-delay: 0.3s; }
-.wave-rainbow span:nth-child(4) { animation-delay: 0.45s; }
 
-@keyframes rainbowWave {
-  0% {
-    transform: translateY(0);
-    background-position: 0% 50%;
-  }
-  50% {
-    transform: translateY(-20px);
-    background-position: 100% 50%;
-  }
-  100% {
-    transform: translateY(0);
-    background-position: 0% 50%;
-  }
+.flow span:nth-child(1) { animation-delay: 0s; }
+.flow span:nth-child(2) { animation-delay: 0.2s; }
+.flow span:nth-child(3) { animation-delay: 0.4s; }
+.flow span:nth-child(4) { animation-delay: 0.6s; }
+.flow span:nth-child(5) { animation-delay: 0.8s; }
+.flow span:nth-child(6) { animation-delay: 1s; }
+.flow span:nth-child(7) { animation-delay: 1.2s; }
+.flow span:nth-child(8) { animation-delay: 1.4s; }
+.flow span:nth-child(9) { animation-delay: 1.6s; }
+.flow span:nth-child(10) { animation-delay: 1.8s; }
+.flow span:nth-child(11) { animation-delay: 2s; }
+.flow span:nth-child(12) { animation-delay: 2.2s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; }
 }
 
-.heart-path {
-  display: inline-block;
-  animation: heartMove 4s ease-in-out infinite;
-  position: relative;
+.pop-shimmer {
+    display: inline-block;
+    animation: pop 1.4s ease-in-out infinite, shimmer 2s linear infinite;
+    color: #ff4fa3;
+    text-shadow: 0 0 8px #ff9acb;
 }
 
-/* Heart-shaped motion path */
-@keyframes heartMove {
-  0%   { transform: translate(0, 0); }
-  10%  { transform: translate(20px, -30px); }
-  20%  { transform: translate(50px, -50px); }
-  30%  { transform: translate(80px, -30px); }
-  40%  { transform: translate(100px, 0); }
-  50%  { transform: translate(80px, 30px); }
-  60%  { transform: translate(50px, 60px); }
-  70%  { transform: translate(20px, 30px); }
-  80%  { transform: translate(0, 0); }
-  100% { transform: translate(0, 0); }
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.18); }
+    100% { transform: scale(1); }
 }
 
-input[type="radio"] {
-  display: none;
+@keyframes shimmer {
+    0% {
+        text-shadow: 
+            0 0 8px #ff9acb,
+            0 0 12px #ffb3d9;
+    }
+    50% {
+        text-shadow: 
+            0 0 14px #ff9acb,
+            0 0 22px #ffb3d9,
+            0 0 30px #ffd6e8;
+    }
+    100% {
+        text-shadow: 
+            0 0 8px #ff9acb,
+            0 0 12px #ffb3d9;
+    }
 }
 
-.screen {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.6s ease;
+.love-font {
+    font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-
-/* Only show the screen that matches the checked radio */
-#p1:checked ~ .s1 { opacity: 1; pointer-events: auto; }
-#p2:checked ~ .s2 { opacity: 1; pointer-events: auto; }
-#p3:checked ~ .s3 { opacity: 1; pointer-events: auto; }
-#p4:checked ~ .s4 { opacity: 1; pointer-events: auto; }
-#p5:checked ~ .s5 { opacity: 1; pointer-events: auto; }
-#p6:checked ~ .s6 { opacity: 1; pointer-events: auto; }
-#p7:checked ~ .s7 { opacity: 1; pointer-events: auto; }
-#p8:checked ~ .s8 { opacity: 1; pointer-events: auto; }
-#p9:checked ~ .s9 { opacity: 1; pointer-events: auto; }
-
-
-.flow-I {
-  display: inline-block;
-  position: relative;
-  animation: smoothWaveAcross 6s ease-in-out forwards;
-}
-
-/* Smooth, natural wave + slow drift to the right */
-@keyframes smoothWaveAcross {
-  0%   { transform: translateX(-250px) translateY(0); }
-  20%  { transform: translateX(-150px) translateY(-10px); }
-  40%  { transform: translateX(-50px) translateY(10px); }
-  60%  { transform: translateX(50px) translateY(-10px); }
-  80%  { transform: translateX(150px) translateY(5px); }
-  100% { transform: translateX(250px) translateY(0); }
-}
-
 
 
